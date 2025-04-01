@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /><title>大伯的事</title><link rel="shortcut icon" type="image/x-icon" href="/logo.png" /><link rel="stylesheet" href="/assets/css/left.css" /></head><body a="light">
+    <main class="page-content" aria-label="Content"><header><div class="sidebar">
+
+<div class="sidecontent">
+<div class="avatar-title">
+  <a href="/"  ><img src="/assets/image/avatar.png"  class="avatar"/> </a>
+
+  <a href="/" class="nav-title"  > L 记事本 </a>
+</div>
+
+
+
+<nav>
+  <ul class="navul">
+      <li class="navli curNav">
+
+      <a href="/" class="nav">日志</a></li>
+      <li class="navli">
+
+      <a href="/archive.html" class="nav">归档</a></li>
+      <li class="navli">
+
+      <a href="/tags.html" class="nav">标签</a></li>
+      <li class="navli">
+
+      <a href="/about.html" class="nav">关于</a></li></ul>
+</nav>
+
+
+</div>
+
+
+</div></header>
+<section class="rightsidecontent">
+<div class="w">
+    
+    <h2>大伯的事</h2><time datetime="2025-04-01 13:40:54 +0800">2025/04/01 Tue</time> &nbsp; &nbsp;<a href="/tags/日常.html" class="tag"><text><nobr>#日常</nobr></text>&nbsp;</a><a href="/tags/秘.html" class="tag"><text><nobr>#秘</nobr></text>&nbsp;</a><article><style>
+.errPsw{
+    animation: shake 0.4s cubic-bezier(0.25, 1.5, 0.5, 1);
+    border:solid 2px #f0ada0;    
+    border-radius: 4px;
+}
+    @keyframes shake {
+        0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-15px);
+    }
+    40% {
+        transform: translateX(10px);
+    }
+    60% {
+        transform: translateX(-7px);
+    }
+    80% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+    }
+</style>
+
+
+<div id="encrypted">
+    <h3> 🔒 文章内容已经被加密:) </h3>
+   
+    <input style="width:100%; " type="password" id="passwordinput" placeholder="输入密码"></input>
+    <p>
+        <input type="button" value= "解密" id="DecryptBtn"/>
+        <input type="button" value= "清空密码缓存" id="ClearBtn1"/>
+    
+    </div>
+    
+    <div id="decrypted"  style = "display:none">
+        <p>
+        <div>
+           
+            <input type="button" value= "重新加密" id="EncryptBtn"/>
+
+            <input type="button" value= "清空密码缓存" id="ClearBtn2"/>
+           
+        </div>
+        <div id = 'decryptContent'>
+        </div>
+    </div>
+    <script>
+        var exports = exports || {} 
+    </script>
+    <script src="//cdn.jsdelivr.net/gh/vitock/jsdelivr@0.1.2/js/base64js.js"></script>
+    <script>
+        
+function uint8ArrayToHex(uint8Array) {
+  return Array.from(uint8Array)
+    .map(byte => byte.toString(16).padStart(2, '0'))  // 转换每个字节为2位16进制
+    .join('');  // 连接成字符串
+}
+    const contentEnc = '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';
+    
+        !function(){
+
+            const substl = crypto.subtle
+            const preFix = '1014d63b3a2022013563f032cdf6bba2c';
+            const encid = preFix
+            const encryptedContent = contentEnc;
+            const base64str = encryptedContent.substring(3)
+            const bfMsg = base64js.decode(base64str)
+            const bfIv = bfMsg.subarray(0,12)
+            const bfCipher = bfMsg.subarray(12)
+            
+            async function genKey(psw){
+                var keyRaw = new TextEncoder().encode(psw)
+                var key = await substl.importKey('raw',keyRaw,'PBKDF2',false,["deriveBits"])
+                const salt = 'this is a salt string 20221019'
+                let pbkdf2  = {
+                    name:"PBKDF2",hash: "SHA-256",iterations: 12345,salt: new TextEncoder().encode(salt)
+                }
+                return  await substl.deriveBits(pbkdf2,key,256);
+            }
+
+        async function decryptRaw(bf,key,outV){
+            if(bf.length < 8){
+                if(outV){
+                     outV.count = bf.length
+                }
+                throw 'err'
+            }
+            let count = 0;
+            for (let i  = 0; i  < 4; i ++) {
+                count |= ((bf[i] ^ bf[i + 4] ^ i) << ((3 - i) * 8))
+            }
+
+            if(outV){
+                outV.count = count
+            }
+            if (bf.length < count) {
+                return
+            }
+
+            let bfIv = bf.slice(4,20)
+            let bfCipher = bf.slice(20,count )
+   
+            var aeskey = {
+                name:"AES-CTR",
+            }
+            var keyObj = await substl.importKey('raw',key,aeskey,false,['decrypt'])
+            var aesDec= {name: "AES-CTR",counter:bfIv,length:64};
+            try{
+                let bfDec  = await substl.decrypt(aesDec,keyObj,bfCipher)
+                return  new  Uint8Array(bfDec)
+            }catch (error) {
+                throw error
+            }
+             
+        }
+ 
+        async function decryptBase64Msg(msg64,key){
+            const base64str = msg64;
+            const bfMsg = base64js.decode(base64str)
+            return await decryptRaw(bfMsg,key)
+
+        }
+        async function checkKey(key){
+            const keyData  = "Ck0PFwpMDSArhKqX46zbcGrF+m16RVUSrDE/xpzqbf8XctJMUqlmb0DMw+pMbtmtpgR6iQ==";
+             
+            const arrTest = 'qUNsP3K5EyBSP8ixs/06mF0qB6m3zbigSHT/6XByaJbdFZNncxDf4nZlIONQDOKiVf8WOO34n3yCRG/Z0Jok.5atnHeWqZXZcdvn9rLFqCsSIV/sVPUZUiAYUg96HuYalv6gGYmE8/IEZONpKKocDpOam0j2uXkw5I1Y5FtFu2Ut0ydjoviWZyKuWHx4CIB2sS+YKFnNDjdePTvw9iwThHg1caIBKRMI='.split('.');
+            const testData = arrTest[0];
+            const testDataEnc = arrTest[1];
+            const bfTestData = base64js.decode(testDataEnc)
+
+
+            const bfKeyData = base64js.decode(keyData)
+            let keyBf = null
+            let C  = 0;
+            let sum = 0;
+            while (C ++ < 400 ) {
+                if (sum >= bfKeyData.length ) {
+                    break
+                }
+                let bfSub = bfKeyData.slice(sum)
+                
+                try {
+                    let outV = {count:0}
+                    let d = await decryptRaw(bfSub,key,outV)
+
+                    sum += outV.count
+                    if (d) {
+                        let dec = await decryptRaw(bfTestData,d)
+                        let s =  new TextDecoder().decode(dec) 
+                        if(s == testData){
+                            keyBf = d;
+                            break;
+                        }
+                    }else{
+                       
+                    }
+                    
+                    
+                } catch (error) {
+                     
+                }
+            }
+             
+            return keyBf
+        }
+ 
+        async function decrypt (key0,isCached){
+            // const key = Uint8Array([...]); // 32 bytes key
+            var key  = ''
+            if(isCached){
+                key = readKey()
+            }
+            else{
+                var keyS = preFix + key0 +  preFix
+                key = await genKey(keyS)
+            }
+            if (key.length == 0) {
+                return
+            }
+            try {
+                let keyBf = await checkKey(key)
+                if(!keyBf){
+                    throw 'error psw'
+                }
+                var bfDec  = await decryptBase64Msg(contentEnc,keyBf)
+                var plain = new TextDecoder().decode(bfDec);
+                setKey(key)
+                document.getElementById("encrypted").style.display = 'none'
+                // / show decrypted 
+    
+                document.getElementById("decrypted").style.display = 'block'
+                document.getElementById("decryptContent").innerHTML = plain
+    
+                setTimeout(function(){
+                    var loadevent = document.createEvent("Event")
+                    loadevent.initEvent("load", true, true)
+    
+                    var DOMContentLoaded_event = document.createEvent("Event")
+                    DOMContentLoaded_event.initEvent("DOMContentLoaded", true, true)
+    
+                    window.dispatchEvent(loadevent)
+                    window.dispatchEvent(DOMContentLoaded_event)
+    
+                }, 500);
+            } catch (error) {
+                console.log(error)
+                // alert("wrong password.")
+                document.getElementById('passwordinput').classList.add('errPsw');
+                setTimeout(() => {
+                    document.getElementById('passwordinput').classList.remove('errPsw')
+                }, 500);
+            }
+        }
+        
+        document.getElementById("DecryptBtn").onclick = function(){
+            var key = document.getElementById("passwordinput").value
+            decrypt(key);        
+        }
+    
+        document.getElementById("EncryptBtn").onclick = function(){
+            /// hide input
+            document.getElementById("encrypted").style.display = 'block'
+            // / show decrypted 
+            document.getElementById("decrypted").style.display = "none"
+    
+            clearKey()
+        }
+
+        document.getElementById("EncryptBtn").onclick = function(){
+            /// hide input
+            document.getElementById("encrypted").style.display = 'block'
+            // / show decrypted 
+            document.getElementById("decrypted").style.display = "none"
+    
+            clearKey()
+        }
+
+        document.getElementById("ClearBtn1").onclick = function(){
+            localStorage.clear();
+            document.getElementById('passwordinput').value = ''
+        }
+        document.getElementById("ClearBtn2").onclick = function(){
+            localStorage.clear();
+        }
+
+        
+
+        
+    
+        
+            function readKey(){
+                var key = encid;
+                var v = localStorage.getItem(key)
+                if (v) {
+                    return base64js.decode(v)
+                }else{
+                    return null
+                }
+            }
+            function setKey(value){
+                var key = encid
+                var arr = new Uint8Array(value)
+                var b64 = base64js.encode(arr)
+                return localStorage.setItem(key,b64)
+            }
+            function clearKey() {
+                var key = encid
+                localStorage.removeItem(key)
+            }
+            var cachekey = readKey()
+            if(cachekey){
+                decrypt(cachekey,true)
+            }
+
+        
+        
+        
+ 
+    }()
+    
+    
+    </script>
+    </article>
+<footer class="footer">
+      <p> Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/vitock/jekyll-zeta">Jekyll-zeta</a>
+     </p>
+    </footer></div>
+</section></main></body>
+</html>
