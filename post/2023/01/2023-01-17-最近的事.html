@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"  _g_date="2025-09-30 09:23:10 +0800" >
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /><title>最近的事</title><link rel="shortcut icon" type="image/x-icon" href="/logo.png" /><link rel="stylesheet" href="/assets/css/left.css" />
+  
+
+  <script>
+    setTimeout(() => {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '//no-style.kr7y.workers.dev/zeta.css?865529d70a';
+      link.type = 'text/css';
+      document.head.appendChild(link);
+    }, 500);
+  </script>
+</head><body a="light">
+    <main class="page-content" aria-label="Content"><header><div class="sidebar">
+
+<div class="sidecontent">
+<div class="avatar-title">
+  <a href="/"  ><img src="/assets/image/avatar.png"  class="avatar"/> </a>
+
+  <a href="/" class="nav-title"  > L 记事本 </a>
+</div>
+
+
+
+<nav>
+  <ul class="navul">
+      <li class="navli curNav">
+
+      <a href="/" class="nav">日志</a></li>
+      <li class="navli">
+
+      <a href="/archive" class="nav">归档</a></li>
+      <li class="navli">
+
+      <a href="/tags" class="nav">标签</a></li>
+      <li class="navli">
+
+      <a href="/happylife" class="nav">HP</a></li>
+      <li class="navli">
+
+      <a href="/tags/%E8%A5%BF%E8%A5%BF%E5%92%8C%E7%93%9C%E7%93%9C" class="nav">XG</a></li>
+      <li class="navli">
+
+      <a href="/about" class="nav">关于</a></li></ul>
+</nav>
+
+
+</div>
+
+
+</div></header>
+<section class="rightsidecontent">
+<div class="w">
+    
+    
+<h2>最近的事</h2><time datetime="2023-01-17 15:37:15 +0800">2023/01/17 Tue</time> &nbsp; &nbsp;<a href="/tags/流水账.html" class="tag"><text><nobr>#流水账</nobr></text>&nbsp;</a><a href="/tags/日常.html" class="tag"><text><nobr>#日常</nobr></text>&nbsp;</a><a href="/tags/秘.html" class="tag"><text><nobr>#秘</nobr></text>&nbsp;</a><article><style>
+.errPsw{
+    animation: shake 0.4s cubic-bezier(0.25, 1.5, 0.5, 1);
+    border:solid 2px #f0ada0;    
+    border-radius: 4px;
+}
+    @keyframes shake {
+        0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-15px);
+    }
+    40% {
+        transform: translateX(10px);
+    }
+    60% {
+        transform: translateX(-7px);
+    }
+    80% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+    }
+</style>
+
+
+<div id="encrypted">
+    <h3> 🔒 文章内容已经被加密:) </h3>
+   
+    <input style="width:100%; " type="password" id="passwordinput" placeholder="输入密码" autocomplete="off"></input>
+    <p>
+        <input type="button" value= "解密" id="DecryptBtn"/>
+        <input type="button" value= "清空密码缓存" id="ClearBtn1"/>
+    
+    </div>
+    
+    <div id="decrypted"  style = "display:none">
+        <p>
+        <div>
+           
+            <input type="button" value= "重新加密" id="EncryptBtn"/>
+
+            <input type="button" value= "清空密码缓存" id="ClearBtn2"/>
+           
+        </div>
+        <div id = 'decryptContent'>
+        </div>
+    </div>
+    <script>
+        var exports = exports || {} 
+    </script>
+    <script src="//cdn.jsdelivr.net/gh/vitock/jsdelivr@0.1.2/js/base64js.js"></script>
+    <script>
+        
+
+/*********** encrypt_page.js [1fd1f63dac]  ***********/
+
+function _InitEnc(e,t,n,c,o){!function(){const a=crypto.subtle,r=e,i=t.substring(3),d=base64js.decode(i);d.subarray(0,12),d.subarray(12);async function l(e,t,n){if(e.length<8)throw n&&(n.count=e.length),"err";let c=0
+;for(let t=0;t<4;t++)c|=(e[t]^e[t+4]^t)<<8*(3-t);if(n&&(n.count=c),e.length<c)return;let o=e.slice(4,20),r=e.slice(20,c);var i=await a.importKey("raw",t,{name:"AES-CTR"},!1,["decrypt"]),d={name:"AES-CTR",counter:o,length:64};try{
+let e=await a.decrypt(d,i,r);return new Uint8Array(e)}catch(e){throw e}}async function s(o,r){var i="";if(r)i=u();else{var d=e+o+e;i=await async function(e){var t=(new TextEncoder).encode(e),n=await a.importKey("raw",t,"PBKDF2",!1,["deriveBits"])
+;let c={name:"PBKDF2",hash:"SHA-256",iterations:12345,salt:(new TextEncoder).encode("this is a salt string 20221019")};return await a.deriveBits(c,n,256)}(d)}if(0!=i.length)try{let e=await async function(e){
+const t=c.split("."),o=t[0],a=t[1],r=base64js.decode(a),i=base64js.decode(n);let d=null,s=0,u=0;for(;s++<400&&!(u>=i.length);){let t=i.slice(u);try{let n={count:0},c=await l(t,e,n);if(u+=n.count,c){let e=await l(r,c)
+;if((new TextDecoder).decode(e)==o){d=c;break}}}catch(e){}}return d}(i);if(!e)throw"error psw";var s=await async function(e,t){const n=e,c=base64js.decode(n);return await l(c,t)}(t,e),m=(new TextDecoder).decode(s);y(i),
+document.getElementById("encrypted").style.display="none",document.getElementById("decrypted").style.display="block",document.getElementById("decryptContent").innerHTML=m;const o=window._after_dec_fun;o&&"function"==typeof o&&o(),
+setTimeout((function(){var e=document.createEvent("Event");e.initEvent("load",!0,!0);var t=document.createEvent("Event");t.initEvent("DOMContentLoaded",!0,!0),window.dispatchEvent(e),window.dispatchEvent(t)}),100)}catch(e){
+document.getElementById("passwordinput").classList.add("errPsw"),setTimeout((()=>{document.getElementById("passwordinput").classList.remove("errPsw")}),500)}}document.getElementById("DecryptBtn").onclick=function(){
+s(document.getElementById("passwordinput").value)},document.getElementById("EncryptBtn").onclick=function(){document.getElementById("encrypted").style.display="block",document.getElementById("decrypted").style.display="none",
+document.getElementById("decryptContent").innerHTML=":)",m();const e=window._after_enc_fun;e&&"function"==typeof e&&e()},document.getElementById("ClearBtn1").onclick=function(){localStorage.clear(),document.getElementById("passwordinput").value=""},
+document.getElementById("ClearBtn2").onclick=function(){localStorage.clear()};const u=o?function(){}:function(){var e=r,t=localStorage.getItem(e);return t?base64js.decode(t):null},y=o?function(e){}:function(e){
+var t=r,n=new Uint8Array(e),c=base64js.encode(n);return localStorage.setItem(t,c)},m=o?function(){}:function(){var e=r;localStorage.removeItem(e)};var w=u();w&&s(w,!0)}()}
+
+
+
+        /******************************************************************/
+        
+
+        
+        const contentEnc = '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';
+        const keyData  = '2d16h9nceLBXjdamVEvrsvnDrRMY1vItLSZc42LUtHvg1GNeCat8x4Jf+5XTJptqNzs6mQ==';
+        const TestData = 'YO+5yQNHsbHzPuQyDXffmjPMyD/4coCxnuf8Plwi4SbuokyZDdImZcCfJo3rFH4nfAQxb+mtUUd+2pyeB5Rh.5wiODucJjGWaWZu7MAvvs46hhAy/505oOcvcZBBh1/adsTmHnXUkXjBs/W23wTZrQM/NgtCcbwISW39KPR/qKqqfmoXoLnysXTnG52sWepDyh0YglSUkNEWKc4hMbAsEF+Rd03FJxXc='
+        const preFix = '1014d63b3a2022013563f032cdf6bba2c';
+        const forbid_cache_password = false;
+
+        _InitEnc(preFix,contentEnc,keyData,TestData,forbid_cache_password)
+    </script>
+    </article>
+
+<footer class="footer">
+      <p> Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/vitock/jekyll-zeta">Jekyll-zeta</a>
+     </p>
+    </footer></div>
+</section></main></body>
+</html>
