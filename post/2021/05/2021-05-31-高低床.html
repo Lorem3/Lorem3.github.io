@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"  _g_date="2025-12-08 08:58:29 +0800" >
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /><title>拼一个高低床</title><link rel="shortcut icon" type="image/x-icon" href="/logo.png" /><link rel="stylesheet" href="/assets/css/left.css" />
+  
+
+  <script>
+    setTimeout(() => {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '//no-style.kr7y.workers.dev/zeta.css?06f46c216f';
+      link.type = 'text/css';
+      document.head.appendChild(link);
+    }, 500);
+  </script>
+</head><body a="light">
+    <main class="page-content" aria-label="Content"><header><div class="sidebar">
+
+<div class="sidecontent">
+<div class="avatar-title">
+  <a href="/"  ><img src="/assets/image/avatar.png"  class="avatar"/> </a>
+
+  <a href="/" class="nav-title"  > L 记事本 </a>
+</div>
+
+
+
+<nav>
+  <ul class="navul">
+      <li class="navli curNav">
+
+      <a href="/" class="nav">日志</a></li>
+      <li class="navli">
+
+      <a href="/archive" class="nav">归档</a></li>
+      <li class="navli">
+
+      <a href="/tags" class="nav">标签</a></li>
+      <li class="navli">
+
+      <a href="/happylife" class="nav">HP</a></li>
+      <li class="navli">
+
+      <a href="/tags/%E8%A5%BF%E8%A5%BF%E5%92%8C%E7%93%9C%E7%93%9C" class="nav">XG</a></li>
+      <li class="navli">
+
+      <a href="/about" class="nav">关于</a></li></ul>
+</nav>
+
+
+</div>
+
+
+</div></header>
+<section class="rightsidecontent">
+<div class="w">
+    
+    
+<h2>拼一个高低床</h2><time datetime="2021-05-31 17:27:20 +0800">2021/05/31 Mon</time> &nbsp; &nbsp;<a href="/tags/秘.html" class="tag"><text><nobr>#秘</nobr></text>&nbsp;</a><article><style>
+.errPsw{
+    animation: shake 0.4s cubic-bezier(0.25, 1.5, 0.5, 1);
+    border:solid 2px #f0ada0;    
+    border-radius: 4px;
+}
+    @keyframes shake {
+        0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-15px);
+    }
+    40% {
+        transform: translateX(10px);
+    }
+    60% {
+        transform: translateX(-7px);
+    }
+    80% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+    }
+</style>
+
+
+<div id="encrypted">
+    <h3> 🔒 文章内容已经被加密:) </h3>
+   
+    <input style="width:100%; " type="password" id="passwordinput" placeholder="输入密码" autocomplete="off"></input>
+    <p>
+        <input type="button" value= "解密" id="DecryptBtn"/>
+        <input type="button" value= "清空密码缓存" id="ClearBtn1"/>
+    
+    </div>
+    
+    <div id="decrypted"  style = "display:none">
+        <p>
+        <div>
+           
+            <input type="button" value= "重新加密" id="EncryptBtn"/>
+
+            <input type="button" value= "清空密码缓存" id="ClearBtn2"/>
+           
+        </div>
+        <div id = 'decryptContent'>
+        </div>
+    </div>
+    <script>
+        var exports = exports || {} 
+    </script>
+    <script src="//cdn.jsdelivr.net/gh/vitock/jsdelivr@0.1.2/js/base64js.js"></script>
+    <script>
+        
+
+/*********** encrypt_page.js [1fd1f63dac]  ***********/
+
+function _InitEnc(e,t,n,c,o){!function(){const a=crypto.subtle,r=e,i=t.substring(3),d=base64js.decode(i);d.subarray(0,12),d.subarray(12);async function l(e,t,n){if(e.length<8)throw n&&(n.count=e.length),"err";let c=0
+;for(let t=0;t<4;t++)c|=(e[t]^e[t+4]^t)<<8*(3-t);if(n&&(n.count=c),e.length<c)return;let o=e.slice(4,20),r=e.slice(20,c);var i=await a.importKey("raw",t,{name:"AES-CTR"},!1,["decrypt"]),d={name:"AES-CTR",counter:o,length:64};try{
+let e=await a.decrypt(d,i,r);return new Uint8Array(e)}catch(e){throw e}}async function s(o,r){var i="";if(r)i=u();else{var d=e+o+e;i=await async function(e){var t=(new TextEncoder).encode(e),n=await a.importKey("raw",t,"PBKDF2",!1,["deriveBits"])
+;let c={name:"PBKDF2",hash:"SHA-256",iterations:12345,salt:(new TextEncoder).encode("this is a salt string 20221019")};return await a.deriveBits(c,n,256)}(d)}if(0!=i.length)try{let e=await async function(e){
+const t=c.split("."),o=t[0],a=t[1],r=base64js.decode(a),i=base64js.decode(n);let d=null,s=0,u=0;for(;s++<400&&!(u>=i.length);){let t=i.slice(u);try{let n={count:0},c=await l(t,e,n);if(u+=n.count,c){let e=await l(r,c)
+;if((new TextDecoder).decode(e)==o){d=c;break}}}catch(e){}}return d}(i);if(!e)throw"error psw";var s=await async function(e,t){const n=e,c=base64js.decode(n);return await l(c,t)}(t,e),m=(new TextDecoder).decode(s);y(i),
+document.getElementById("encrypted").style.display="none",document.getElementById("decrypted").style.display="block",document.getElementById("decryptContent").innerHTML=m;const o=window._after_dec_fun;o&&"function"==typeof o&&o(),
+setTimeout((function(){var e=document.createEvent("Event");e.initEvent("load",!0,!0);var t=document.createEvent("Event");t.initEvent("DOMContentLoaded",!0,!0),window.dispatchEvent(e),window.dispatchEvent(t)}),100)}catch(e){
+document.getElementById("passwordinput").classList.add("errPsw"),setTimeout((()=>{document.getElementById("passwordinput").classList.remove("errPsw")}),500)}}document.getElementById("DecryptBtn").onclick=function(){
+s(document.getElementById("passwordinput").value)},document.getElementById("EncryptBtn").onclick=function(){document.getElementById("encrypted").style.display="block",document.getElementById("decrypted").style.display="none",
+document.getElementById("decryptContent").innerHTML=":)",m();const e=window._after_enc_fun;e&&"function"==typeof e&&e()},document.getElementById("ClearBtn1").onclick=function(){localStorage.clear(),document.getElementById("passwordinput").value=""},
+document.getElementById("ClearBtn2").onclick=function(){localStorage.clear()};const u=o?function(){}:function(){var e=r,t=localStorage.getItem(e);return t?base64js.decode(t):null},y=o?function(e){}:function(e){
+var t=r,n=new Uint8Array(e),c=base64js.encode(n);return localStorage.setItem(t,c)},m=o?function(){}:function(){var e=r;localStorage.removeItem(e)};var w=u();w&&s(w,!0)}()}
+
+
+
+        /******************************************************************/
+        
+
+        
+        const contentEnc = 'iTfMEok2yoEnkjUG232JCg93mfkly+6UAzuy4TCbWxE69fE2kXLgAM9m1PybrcPbwoh9aj7GawelJ8qulKMNj6leqMp5QdeaBvgow8iYk153gsKl3ojOl1nabtL1+h0Bxcpxds31hsSbqb0tqAoya9a/praRom7qiN5z6LiHEx5GsctigUQMROurVw5J+WJH0B4KKVPlNDUatro6LX0B1j2e1Cvp4E5Yf78hy8Z33TLPoK9aRboDftjFPl3cnUVRvHeuhpTkRlWD3+ApT6AlwJSn1645QKNBgeakpIZONhhgLV5oI7W2p1ncu7uXGmzos3D0MD9n2ifHnv9lUHu4O8hyt/qiWldaAdDpj99EfB4Ot5di42+n0W9iXQ/EK2X3jaBYVci1C5i82tI2qmtHdYpf9CEk5/c2ZxMUVHsyL33mIP5MDsaa9f6Ejfq8KLufgiHRE0nENM9qCdPKV5xo6IQbuz0LbnMX/w9QMrYcXxaD9qM73x78pNj7WsEnUDzCMDSA1AYtD2d3mmA2lXFHSKAuaGpNypwN1UW1+vchhSGptleap/AZsgBiLLK4y8/HMY3I9QUHrqj5CDn2I1HAW0cLsCQUJwM10nZZyW1sxx8F64TbijkQW9x8Q5Z0+sws7eevqp81uJG3F2AquBggLHYkwEor5cPK3QITHJU8w9e9dJizRA+JFs6/jxuLsv4hXi2F8xibKtt9qgOCEcNrtFHFqXxgnk4KuQ8J3EgrhphNgM29ppldKCLPLBDi3X5dGWdtEvIhNoh51kc8SPO7Ca0yUJ/h4242Jj+KY7AOhv86pt07CL2mMVrl7fXKtcnzZ8L31FVdITAGvmnZy7pGS79dcHNh/orfC7adTDPZd5+H7d8SL3l1gYkp9jkulbhOq2H+ut7ri31eUdBUPDq27OPH0LDmNP9kbz0WEg+gs2zKVG3b8KoWm8Y+sjW+6ir6AFzD0rjc/59T9OJ4V0OJzq3KkX67OhMIeZql/gvgYES235IdYTYRpXKtFl6JhEPw1asL5RB6CxZQ4cv3+wCz73d/+Wjsy1NuGEEjlVu7j2y1nY9HLxMQW2Uh2vrczu1L/vYKSO+a5jYYm4KCIE/XrlA3YdE5/xC6aszi5AsGHILlsl0MkH0fkMuiHF6+PsnHWHpYLHXSXzYwbgpB/FFs+/o8BwC6LAbU6ap2iWQRP2vwQ9QsKnlFKDhJDf4TDD+u1Whqlza8NoHmj26hakwMZFkVw2VR+nQFnZwWI+L5Z1mwCQyP3vTg+5xJYI2jqSSYPaI4bMVmKLlA1EdKNDkGkpHBfS1+1ITh1bPfL7aqjLW6IABAYJZbCRv0s+2TbuKqIzv6fX5S1TgC9GCbPuyk7x1O/zQNyfkFjl8pJHGPaLopUHAWSgcN6gUI3mMb1XY5Y2ZUeiBx3DDlW4XW5yBXaTABQo77nHibDev3TguWjPSDFvf61A20hOeic2XjzE0zIhe1KxQWeuH3UA3VPHGxLKGZvCm+szCumCXxHWVYOS52poicAVM6F7NYnhONGF677dVH3BHxDluhnFWadtTFuA==';
+        const keyData  = 'xhAjYsYRIVVn8YRz1ftyaesW7gqZVa3wrRHobL6OJ882ajt/gfei071boNnUfkx2yemLmQ==';
+        const TestData = 'PlKDQuycOHF6f1fU0zPXPh3aS/oEJV5sOL2PhnKcka0A+bsRakDYq13svxH6PVoCtuzB2tZhUldkxRcjjXJy.iHaZtoh3m93qKp3tW7CW+gAtwP2eWD72/aeHghqnyHwt2bJwgMC7EGMszhjCHBj+BrH91QmIL64fmd0EJBKFXHDi932QkmRKczkciuhmK6Tz9705OoSk/0LQ+bD1D+2E4JrlIpLLuAI='
+        const preFix = '1014d63b3a2022013563f032cdf6bba2c';
+        const forbid_cache_password = false;
+
+        _InitEnc(preFix,contentEnc,keyData,TestData,forbid_cache_password)
+    </script>
+    </article>
+
+<footer class="footer">
+      <p> Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/vitock/jekyll-zeta">Jekyll-zeta</a>
+     </p>
+    </footer></div>
+</section></main></body>
+</html>
