@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"  _g_date="2026-02-20 21:22:48 +0800" >
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /><title>一次AES白盒密钥还原</title><link rel="shortcut icon" type="image/x-icon" href="/logo.png" /><link rel="stylesheet" href="/assets/css/left.css" />
+  
+
+  <script>
+    setTimeout(() => {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '//no-style.kr7y.workers.dev/zeta.css?6be83c0ee3';
+      link.type = 'text/css';
+      document.head.appendChild(link);
+    }, 500);
+  </script>
+</head><body a="light">
+    <main class="page-content" aria-label="Content"><header><div class="sidebar">
+
+<div class="sidecontent">
+<div class="avatar-title">
+  <a href="/"  ><img src="/assets/image/avatar.png"  class="avatar"/> </a>
+
+  <a href="/" class="nav-title"  > L 记事本 </a>
+</div>
+
+
+
+<nav>
+  <ul class="navul">
+      <li class="navli curNav">
+
+      <a href="/" class="nav">日志</a></li>
+      <li class="navli">
+
+      <a href="/archive" class="nav">归档</a></li>
+      <li class="navli">
+
+      <a href="/tags" class="nav">标签</a></li>
+      <li class="navli">
+
+      <a href="/happylife" class="nav">HP</a></li>
+      <li class="navli">
+
+      <a href="/tags/%E8%A5%BF%E8%A5%BF%E5%92%8C%E7%93%9C%E7%93%9C" class="nav">XG</a></li>
+      <li class="navli">
+
+      <a href="/about" class="nav">关于</a></li></ul>
+</nav>
+
+
+</div>
+
+
+</div></header>
+<section class="rightsidecontent">
+<div class="w">
+    
+    
+<h2>一次AES白盒密钥还原</h2><time datetime="2025-02-08 09:03:38 +0800">2025/02/08 Sat</time> &nbsp; &nbsp;<a href="/tags/流水账.html" class="tag"><text><nobr>#流水账</nobr></text>&nbsp;</a><a href="/tags/日常.html" class="tag"><text><nobr>#日常</nobr></text>&nbsp;</a><a href="/tags/工具.html" class="tag"><text><nobr>#工具</nobr></text>&nbsp;</a><article><p><a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86">AES的基本流程</a>，<br />
+通常（128）有11轮加密，每轮有4个操作</p>
+
+<ol>
+  <li>AddRoundKey—矩阵中的每一个字节都与该次回合密钥（round key）做XOR运算；每个子密钥由密钥生成方案产生。</li>
+  <li>SubBytes—透过一个非线性的替换函数，用查找表的方式把每个字节替换成对应的字节。</li>
+  <li>ShiftRows—将矩阵中的每个横列进行循环式移位。</li>
+  <li>MixColumns—为了充分混合矩阵中各个直行的操作。这个步骤使用线性转换来混合每内联的四个字节。最后一个加密循环中省略MixColumns步骤，而以另一个AddRoundKey取代。</li>
+</ol>
+
+<p>白盒加密，就是利用查表的方式，将计算过程隐藏达到隐藏Key的目的</p>
+
+<p>问题出在最后一轮第11轮上，最后一步改为与key作为xor 运算，从这里入手，应该可以得到第10轮KEY</p>
+
+<p>最后一轮xor运算的查表，通过原始数据和最终数据 xor 可以还原出 KEY</p>
+
+<p>P  ^  Key = C</p>
+
+<p>P ^ C  = Key</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>printf("\nround 10Key:");
+    for(col = 0; col &lt; STATE_COLS; col++)
+    {
+        for(row = 0; row &lt; STATE_ROWS; row++)
+        {
+            /// 这是最终的密文
+            encryptedBlock[col * STATE_COLS + row] = state[row][col];
+            //  还原密钥
+            unsigned char round10_key = state[row][col] ^ wat-&gt;FINALROUND[row][col][state[row][col]];
+            printf("%02x", round10_key);
+        }
+    }
+    printf("\n");
+</code></pre></div></div>
+
+<p>结果</p>
+<blockquote>
+  <p>安全起见，密钥已经替换,这里只是展示</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>round 10Key:ba7acf373c24865e3b843dc3d1309bdc 
+</code></pre></div></div>
+
+<p>我们得到第10轮的密钥，利用<a href="https://github.com/SideChannelMarvels/Stark">Stark</a>
+工具，还原密钥</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./aes_keyschedule ba7acf373c24865e3b843dc3d1309bdc 10
+
+K00: 9B97368D139F87A62EB3309D843DB724  &lt;&lt;&lt;&lt;== 密钥
+K01: BD3E00D2AEA187748012B7E9042F00CD
+K02: AA5DBD2004FC3A5484EE8DBD80C18D70
+K03: D600ECEDD2FCD6B956125B04D6D3D674
+K04: B8F67E1B6A0AA8A23C18F3A6EACB25D2
+K05: B7C9CB9CDDC3633EE1DB90980B10B54A
+K06: 5D1C1DB780DF7E896104EE116A145B5B
+K07: E72524B567FA5A3C06FEB42D6CEAEF76
+K08: E0FA1CE5870046D981FEF2F4ED141D82
+K09: 015E0FB0865E496907A0BB9DEAB4A61F
+K10: BA7ACF373C24865E3B843DC3D1309BDC
+
+</code></pre></div></div>
+
+<p>这样，就得到原始密钥（第0轮） <code class="language-plaintext highlighter-rouge">9B97368D139F87A62EB3309D843DB724</code></p>
+</article>
+
+<footer class="footer">
+      <p> Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/vitock/jekyll-zeta">Jekyll-zeta</a>
+     </p>
+    </footer></div>
+</section></main></body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en"  _g_date="2026-02-20 21:22:48 +0800" >
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /><title>L&T</title><link rel="shortcut icon" type="image/x-icon" href="/logo.png" /><link rel="stylesheet" href="/assets/css/left.css" />
+  
+
+  <script>
+    setTimeout(() => {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '//no-style.kr7y.workers.dev/zeta.css?106de7b05e';
+      link.type = 'text/css';
+      document.head.appendChild(link);
+    }, 500);
+  </script>
+</head><body a="light">
+    <main class="page-content" aria-label="Content"><header><div class="sidebar">
+
+<div class="sidecontent">
+<div class="avatar-title">
+  <a href="/"  ><img src="/assets/image/avatar.png"  class="avatar"/> </a>
+
+  <a href="/" class="nav-title"  > L 记事本 </a>
+</div>
+
+
+
+<nav>
+  <ul class="navul">
+      <li class="navli">
+
+      <a href="/" class="nav">日志</a></li>
+      <li class="navli">
+
+      <a href="/archive" class="nav">归档</a></li>
+      <li class="navli">
+
+      <a href="/tags" class="nav">标签</a></li>
+      <li class="navli curNav">
+
+      <a href="/happylife" class="nav">HP</a></li>
+      <li class="navli">
+
+      <a href="/tags/%E8%A5%BF%E8%A5%BF%E5%92%8C%E7%93%9C%E7%93%9C" class="nav">XG</a></li>
+      <li class="navli">
+
+      <a href="/about" class="nav">关于</a></li></ul>
+</nav>
+
+
+</div>
+
+
+</div></header>
+<section class="rightsidecontent">
+<div class="w">
+    
+    <h2>L&T</h2><time datetime="2025-04-10 00:00:00 +0800">2025/04/10 Thu</time> &nbsp; &nbsp;<a href="/tags/私.html" class="tag"><text><nobr>#私</nobr></text>&nbsp;</a><br/>
+
+
+
+<style>
+  .custom-map-title{
+    margin: 0;
+    font-size: 1.5em;
+    color: #444455;
+  }
+
+  .map-container{
+    padding-bottom: 4em;
+  }
+  .lv-year{
+    
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .lv-year-title{
+    font-weight: bold;
+    font-size: 1.5em; 
+    display: inline-block;
+    color: #aaa;
+    
+  }
+  .lv-year-count{
+    font-weight: bold;
+    display: inline-block;
+    font-size: 1.2em;
+    color: #aaa;
+    
+  }
+  .lv-year-count::before{
+    content: "x";
+    margin-left: 1em;
+    margin-right: 0.2em;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #aaa;
+  }
+
+  #loveiContainer{
+    margin-bottom: 2em;
+  }
+
+</style>
+
+ 
+
+  <script >
+    function create_heatmap_lv(heatmapid,endYear,dataObj,title,count,node){
+
+      
+
+/*********** getPostData.js [8da32e17fc]  ***********/
+
+function hm_getPostData(e,t){e=(""+e).substring(0,4);let r=t.split("/");r.pop();const n=r.join("/");var o=window.__GDATA__;o||(o={},window.__GDATA__=o);let l=window._y_queue||[];function a(e){if(o[e=""+e])return o[e]
+;let t="_singleyearFlg"+e,r="_singleyearQueue"+e;if(1==o[t]){let e=o[r];return e||(e=[],o[r]=e),new Promise((t=>{e.push(t)}))}return o[t]=1,fetch(`${n}/${e}.json`).then((e=>e.json())).then((n=>{o[t]=0,o[e]=n;let l=o[r]
+;return l&&l.length&&(l.forEach((e=>{e(n)})),l.length=0,o[r]=void 0),n})).then((e=>{if(e)for(const t in e)if(Object.prototype.hasOwnProperty.call(e,t)){const r=e[t];Array.isArray(r)&&r.forEach((e=>{const t=e.extra
+;if(t)for(const r in t)if(Object.prototype.hasOwnProperty.call(t,r)){const n=t[r];e[r]=n}}))}return e})).catch((e=>null))}return window._y_queue=l,function(){let r=""+e,n=""+(Number(r)-1)
+;return(o._allYear?o._allYear:1==window._isFetchAllYearData?new Promise((e=>{l.push(e)})):(window._isFetchAllYearData=1,fetch(t).then((e=>e.json())).then((e=>(window._isFetchAllYearData=0,l.length&&(l.forEach((t=>{t(e)})),l.length=0),o._allYear=e,
+e))))).then((e=>{let t=e,o=[];return t[r]&&o.push(a(r)),t[n]&&o.push(a(n)),Promise.all(o).then((e=>{let t={},r=e[0],n=e[1];return r&&r.year&&(t[r.year]=r),n&&n.year&&(t[n.year]=n),Promise.resolve(t)}))}))}()}
+
+      
+
+/*********** heatmap_svg.js [f6e16cf46a]  ***********/
+
+function createSVGMap(t,e,n,r,i){const s=n.split(" "),o=r.split(" "),l=i||0;t?4==t.length&&(t=`${t}-12-31`):t=`${(new Date).getFullYear()}-12-31`;let u=new Date(v(new Date(t))),a=e?new Date(v(new Date(e))):e
+;const d="http://www.w3.org/2000/svg",c=30,b=12,f="MP-"+Math.random().toString(16).substring(2),h=f+"days",m=f+"tip",A=u.getDay(),g=u.getTime(),p=364+(7+A-l)%7;var w=function(t){const e=new Date(t)
+;let n=e.getFullYear()-1,r=e.getMonth()+1,i=e.getDate();return`${n}-${r<10?"0"+r:r}-${i<10?"0"+i:i}`}(g);const y=p-Math.floor((g-new Date(w))/864e5)+1,x=p-Math.floor((g-new Date(v(new Date)))/864e5),k=a?p-Math.floor((g-a.getTime())/864e5):-1
+;function C(t){return v(new Date(g-36e5*(p-t)*24))}function v(t){let e=t.getMonth()+1,n=t.getDate();return`${t.getFullYear()}-${e<10?"0"+e:e}-${n<10?"0"+n:n}`}function N(t){const e=document.createElementNS(d,"rect");e.setAttribute("width","12"),
+e.setAttribute("height","12"),e.setAttribute("rx","1"),e.setAttribute("ry","1"),e.setAttribute("fill","#eef7f2");const n=Math.floor(t/7),r=t-7*n,i=12*n+2*n,o=r*b+2*r;e.setAttribute("x",""+i),e.setAttribute("y",""+o),e.dataset.x=i,e.dataset.y=o
+;let l=C(t);e.dataset.ymd=l,e.id="day-item-"+l;let u=l.substring(5,7);if(l.substring(8,10)<="07"&&t%7==0){let e=s[Number(u)-1],n=document.createElementNS(d,"text");n.setAttribute("y","22"),n.setAttribute("x",i),n.textContent=e,
+n.setAttribute("fill",t>x?"#878787":"#113"),n.setAttribute("font-size","13"),n.setAttribute("font-family","monospace"),E.appendChild(n)}return e}const S=document.createElementNS(d,"svg");S.id=f,S.setAttribute("width","787"),
+S.setAttribute("height","148"),S.style.overflow="visible";let D=document.createElementNS(d,"defs")
+;D.innerHTML='\n    <pattern id="fillA" patternUnits="userSpaceOnUse" width="3" height="3">\n        <path d="M 0 0 L 6 6" stroke="#ccc" stroke-width="1"/>\n    </pattern>\n\n    <pattern id="fillB" patternUnits="userSpaceOnUse" width="6" height="6">\n        <path d="M 0 6 L 6 0" stroke="#bbb" stroke-width="1"/>\n    </pattern>\n  ',
+S.appendChild(D);const E=document.createElementNS(d,"g");E.setAttribute("transform","translate(35, 0)"),S.appendChild(E);const M=document.createElementNS(d,"g");function $(t,e){let n=document.createElementNS(d,"text");n.textContent=t,
+n.setAttribute("font-family","monospace"),n.setAttribute("font-size","13"),n.setAttribute("fill","#333"),n.setAttribute("width","45"),n.setAttribute("height","12"),n.setAttribute("x","5");const r=14*e+10;return n.setAttribute("y",""+r),
+M.appendChild(n),n}M.setAttribute("transform","translate(0, 30)"),S.appendChild(M),$(o[(l+1)%7],1),$(o[(l+3)%7],3),$(o[(l+5)%7],5);const F=document.createElementNS(d,"g");F.id=h,F.setAttribute("transform","translate(35, 30)"),S.appendChild(F)
+;const z=document.createDocumentFragment();for(let t=0;t<371;t++){const e=N(t);e&&z.appendChild(e)}F.appendChild(z);const T=document.createElementNS(d,"text");T.setAttribute("y","138 "),T.setAttribute("x","777"),T.setAttribute("fill","#999999"),
+T.setAttribute("font-size","15"),T.setAttribute("font-family","monospace"),T.setAttribute("text-anchor","end"),T.setAttribute("dominant-baseline","middle"),S.appendChild(T);const L=C(y)
+;L.substring(0,4)==t.substring(0,4)?T.textContent=L.substring(0,4):T.textContent=` ~ ${t}`;const U=document.createElementNS(d,"g");U.id=m,S.appendChild(U);var Y={showFlag:0,idx:-1};function B(t,e,n){if(e<0)return Y.showFlag=0,void setTimeout((()=>{
+0==Y.showFlag&&(U.style.display="none")}),50);if(2==Y.showFlag)return;Y.showFlag=1,Y.idx=e,U.innerHTML="",U.style.display="block";const r=n?0:1;n||(n=[{date:t.dataset.ymd}]),U.setAttribute("class","svg-hm-day-tip");var i
+;const s=n.length,o=20+25*s+"",l=document.createDocumentFragment();let u=document.createElementNS(d,"rect");u.setAttribute("fill","#333333cc"),u.setAttribute("height",o),u.setAttribute("rx","5"),u.setAttribute("ry","5"),l.append(u),
+U.onmouseenter=function(){r||(Y.showFlag=2)},U.onmouseleave=function(){Y.showFlag=0,U.style.display="none"};let a=0;n.forEach(((t,e)=>{let n=t.date.substring(5,7),r=t.date.substring(8,10);n=n.startsWith("0")?n.substring(1):n,
+r=r.startsWith("0")?r.substring(1):r;const i=`${n}-${r} ${t.title||""}`;i.length>a&&(a=i.length);const s=document.createElementNS(d,"text");if(s.textContent=i,s.setAttribute("fill","#fff"),s.setAttribute("font-size","16"),
+s.setAttribute("font-family","monospace"),s.setAttribute("x","10"),t.url){const n="http://www.w3.org/1999/xlink",r=document.createElementNS(d,"a");r.setAttributeNS(n,"xlink:href",t.url),r.setAttribute("target","_blank"),
+s.setAttribute("y",""+(10+25*e+18)),r.appendChild(s),l.appendChild(r)}else s.setAttribute("y",""+(10+25*e+15)),l.appendChild(s)})),i=14.55*a+25,u.setAttribute("width",i),U.appendChild(l);const b=e%7,f=35+14*((e-b)/7)+6-i/2,h=c+14*b-o-2
+;U.setAttribute("transform",`translate(${f}, ${h})`)}return{svg:S,updateDays:function(t){const e=t.color||"#40c463",n=document.createElementNS(d,"tspan");n.setAttribute("font-size","12"),n.setAttribute("dy","0"),n.setAttribute("dx","10"),
+n.setAttribute("fill","#888888"),n.setAttribute("font-family","courier"),n.textContent="",T.append(n);let r=0,i=F.childNodes,s=new Array(371);for(let t=0;t<371;t++)s[t]=t;function o(s){let o=i[s];if(o){
+if(s<y||s>p)return void o.setAttribute("display","none");let i=o.dataset.ymd.substring(5,7),l=Number(i)%2,u=function(e,n){let r=n.substring(0,4),i=n.substring(5,7),s=t[r];if(s&&s[i]){let t=s[i].filter((t=>t.date==n));return t&&t.length?t:null}
+return null}(0,o.dataset.ymd);if(u&&u.length&&(r+=u.length,n.textContent=`x ${r}`),!u&&(s>x||s<k))return o.setAttribute("fill",l?"url(#fillB)":"url(#fillA)"),o.onmouseenter=function(){o.setAttribute("stroke","#000000"),
+o.setAttribute("stroke-width","1"),B(o,s,u)},o.onclick=o.onmouseenter,void(o.onmouseleave=function(){o.setAttribute("stroke",""),o.setAttribute("stroke-width",""),B(o,-1)});const a=u&&u.length;let d=e;if(a){let t=u.find((t=>t.color));t&&(d=t.color),
+o.setAttribute("class","svg-day-1"),o.setAttribute("fill",d&&9==d.length?d:1==a?d+"77":2==a?d+"aa":d+"ff"),o.onmouseenter=function(){o.setAttribute("stroke","#000000"),o.setAttribute("stroke-width","1"),B(o,s,u)},o.onclick=o.onmouseenter,
+o.onmouseleave=function(){o.setAttribute("stroke",""),o.setAttribute("stroke-width",""),B(o,-1)}}else{o.onmouseenter=function(){o.setAttribute("stroke","#000000"),o.setAttribute("stroke-width","1"),B(o,s,u)},o.onclick=o.onmouseenter,
+o.onmouseleave=function(){o.setAttribute("stroke",""),o.setAttribute("stroke-width",""),B(o,-1)};let t=o.dataset.ymd;if(t){let e=t.substring(5,7),n=Number(e)%2;o.setAttribute("fill",n?"#edebf0":"#edebf0aa")}else o.setAttribute("fill","#efefef")}}}
+!function(t){let e=t.length;for(;0!=e;){let n=Math.floor(Math.random()*e);e--,[t[e],t[n]]=[t[n],t[e]]}}(s);var l=0;!function t(){if(l<s.length){const n=19;for(var e=0;e++<n;){if(l>=s.length)return;o(s[l++])}requestAnimationFrame(t)}}()}}}
+
+
+
+
+      /*******************************/
+      
+
+      let container =  document.createElement('div')
+      container.className = 'map-container'
+      let divtitle = document.createElement('div')
+      divtitle.className = 'lv-year'
+  
+      container.appendChild(divtitle) 
+      let div = document.createElement('div')
+      div.className = 'heatmap'
+      div.id = heatmapid
+
+      container.appendChild(div)
+      node.parentNode.insertBefore(container,node)
+ 
+      if (!endYear) {
+         let now = new Date()
+         endYear = `${now.getFullYear()}-${(101 + now.getMonth()).toString().substring(1)}-${(100 + now.getDate()).toString().substring(1)}`
+       }else if(('' + endYear).length == 4 ){
+          endYear = '' + endYear + '-12-31'  
+     }
+
+      const WeeKStart =  1 ;//  0 sunday 1 monday 2. tuesday ...
+      const _MonthStr =  'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec';
+      const _showWeek =  'Sun Mon Tue Wed Thu Fri Sat';
+      const svgmap = createSVGMap(endYear,dataObj.beginDate,_MonthStr,_showWeek,WeeKStart)
+      container.appendChild(svgmap.svg);
+      svgmap.updateDays(dataObj)
+  }
+    
+
+  </script>
+   
+  
+
+  
+  
+   <article><style>
+.errPsw{
+    animation: shake 0.4s cubic-bezier(0.25, 1.5, 0.5, 1);
+    border:solid 2px #f0ada0;    
+    border-radius: 4px;
+}
+    @keyframes shake {
+        0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-15px);
+    }
+    40% {
+        transform: translateX(10px);
+    }
+    60% {
+        transform: translateX(-7px);
+    }
+    80% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+    }
+</style>
+
+
+<div id="encrypted">
+    <h3> 🔒 文章内容已经被加密:) </h3>
+   
+    <input style="width:100%; " type="password" id="passwordinput" placeholder="输入密码" autocomplete="off"></input>
+    <p>
+        <input type="button" value= "解密" id="DecryptBtn"/>
+        <input type="button" value= "清空密码缓存" id="ClearBtn1"/>
+    
+    </div>
+    
+    <div id="decrypted"  style = "display:none">
+        <p>
+        <div>
+           
+            <input type="button" value= "重新加密" id="EncryptBtn"/>
+
+            <input type="button" value= "清空密码缓存" id="ClearBtn2"/>
+           
+        </div>
+        <div id = 'decryptContent'>
+        </div>
+    </div>
+    <script>
+        var exports = exports || {} 
+    </script>
+    <script src="//cdn.jsdelivr.net/gh/vitock/jsdelivr@0.1.2/js/base64js.js"></script>
+    <script>
+        
+
+/*********** encrypt_page.js [1fd1f63dac]  ***********/
+
+function _InitEnc(e,t,n,c,o){!function(){const a=crypto.subtle,r=e,i=t.substring(3),d=base64js.decode(i);d.subarray(0,12),d.subarray(12);async function l(e,t,n){if(e.length<8)throw n&&(n.count=e.length),"err";let c=0
+;for(let t=0;t<4;t++)c|=(e[t]^e[t+4]^t)<<8*(3-t);if(n&&(n.count=c),e.length<c)return;let o=e.slice(4,20),r=e.slice(20,c);var i=await a.importKey("raw",t,{name:"AES-CTR"},!1,["decrypt"]),d={name:"AES-CTR",counter:o,length:64};try{
+let e=await a.decrypt(d,i,r);return new Uint8Array(e)}catch(e){throw e}}async function s(o,r){var i="";if(r)i=u();else{var d=e+o+e;i=await async function(e){var t=(new TextEncoder).encode(e),n=await a.importKey("raw",t,"PBKDF2",!1,["deriveBits"])
+;let c={name:"PBKDF2",hash:"SHA-256",iterations:12345,salt:(new TextEncoder).encode("this is a salt string 20221019")};return await a.deriveBits(c,n,256)}(d)}if(0!=i.length)try{let e=await async function(e){
+const t=c.split("."),o=t[0],a=t[1],r=base64js.decode(a),i=base64js.decode(n);let d=null,s=0,u=0;for(;s++<400&&!(u>=i.length);){let t=i.slice(u);try{let n={count:0},c=await l(t,e,n);if(u+=n.count,c){let e=await l(r,c)
+;if((new TextDecoder).decode(e)==o){d=c;break}}}catch(e){}}return d}(i);if(!e)throw"error psw";var s=await async function(e,t){const n=e,c=base64js.decode(n);return await l(c,t)}(t,e),m=(new TextDecoder).decode(s);y(i),
+document.getElementById("encrypted").style.display="none",document.getElementById("decrypted").style.display="block",document.getElementById("decryptContent").innerHTML=m;const o=window._after_dec_fun;o&&"function"==typeof o&&o(),
+setTimeout((function(){var e=document.createEvent("Event");e.initEvent("load",!0,!0);var t=document.createEvent("Event");t.initEvent("DOMContentLoaded",!0,!0),window.dispatchEvent(e),window.dispatchEvent(t)}),100)}catch(e){
+document.getElementById("passwordinput").classList.add("errPsw"),setTimeout((()=>{document.getElementById("passwordinput").classList.remove("errPsw")}),500)}}document.getElementById("DecryptBtn").onclick=function(){
+s(document.getElementById("passwordinput").value)},document.getElementById("EncryptBtn").onclick=function(){document.getElementById("encrypted").style.display="block",document.getElementById("decrypted").style.display="none",
+document.getElementById("decryptContent").innerHTML=":)",m();const e=window._after_enc_fun;e&&"function"==typeof e&&e()},document.getElementById("ClearBtn1").onclick=function(){localStorage.clear(),document.getElementById("passwordinput").value=""},
+document.getElementById("ClearBtn2").onclick=function(){localStorage.clear()};const u=o?function(){}:function(){var e=r,t=localStorage.getItem(e);return t?base64js.decode(t):null},y=o?function(e){}:function(e){
+var t=r,n=new Uint8Array(e),c=base64js.encode(n);return localStorage.setItem(t,c)},m=o?function(){}:function(){var e=r;localStorage.removeItem(e)};var w=u();w&&s(w,!0)}()}
+
+
+
+        /******************************************************************/
+        
+
+        
+        const contentEnc = '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';
+        const keyData  = 'DSbiJw0n4BAX73Y//+3GztBdImNLxd5y+eFiJUuFX4gbC6nM8eU9GuIUyNhPDHeINwWMM5BwUGGQcVJWt54t/NWA5PpyBgmTrllnjUzmA73tsOBY37hoYrH28mNsk+mTvtMtpsSuaCs=';
+        const TestData = 'T5QyBoDkNWJyHeSxCdqCp3wAnPjvQ/+RRcRNafZoVJn5sLwbcscVPPzrCg/bEDNY4FoZ8xgIJU03Z9bu/fBS.DpJLAQ6TSWp046Vmj3GBS7uG199K2C0362x7UHv3Y06P/uDYKdFY4f5LrYtHfc8UVishTxQwLnMGFJyiho1Txp+l+5gzpQLc2ewOrocVoEyYReyTjOhBVKGHz1w+ZmyjS/RMleJ+XEw='
+        const preFix = '1e34e3d5cc3962fb7ea6e69ba3380270d';
+        const forbid_cache_password = false;
+
+        _InitEnc(preFix,contentEnc,keyData,TestData,forbid_cache_password)
+    </script>
+    </article>
+
+
+  
+ <script>
+
+/*********** getmapdata.js [7ad9a431dc]  ***********/
+
+!function(){var t=100;function e(t){const e=t.split("-").map(Number);if(3!==e.length)throw new Error(`Invalid date format: ${t}`);const[n,r,l]=e;return new Date(n,r-1,l)}function n(t,e){if(t){const n=t.split("-")
+;if(3==n.length)return`${n[0]}-${n[1].padStart(2,"0")}-${n[2].padStart(2,"0")}`;if(2==n.length)return`${e}-${n[0].padStart(2,"0")}-${n[1].padStart(2,"0")}`}return t}function r(t){let e=t.getMonth()+1,n=t.getDate()
+;return`${t.getFullYear()}-${e<10?"0"+e:e}-${n<10?"0"+n:n}`}function l(t,i,a){if(!t)return null;let o=t.trim();if(!o)return null;if(i&&function(t,e){if(t&&t.startsWith("#")){let n=t.split(" ");if(n.length>=2){let r=n[0].substring(1)
+;if(r)return e[r]=t.substring(r.length+2).trim(),1}}return 0}(o,i))return null;var u=o.split(" "),s=u[0];if(s=s.replace("～","~"),i&&s.indexOf("~")>0){let t=s.split("~"),o=t[0],f=t[1],c=e(n(o,a));if(!c||isNaN(c))return;let d=7;if(f){let t=e(n(f,a))
+;t&&!isNaN(t)&&(d=Math.floor((t.getTime()-c.getTime())/864e5)+1)}else d=Math.floor((Date.now()-c.getTime())/864e5)+1,d>7&&(d=7);const g=u.slice(1).join(" ");let p=[];const m=c.getTime();for(let t=0;t<d;t++){const e=l(r(new Date(m+864e5*t))+" "+g,i,a)
+;e&&p.push(e)}return p.length?p:null}let f="";if(!s)return null;{let t=s.split("-"),e=0,n=0,r=0;if(a&&2==t.length)e=a,n=t[0],r=t[1];else{if(3!=t.length)return;e=t[0],n=t[1],r=t[2]}let l=Number(e),i=Number(n),o=Number(n)
+;if(isNaN(l)||isNaN(o)||isNaN(i)||l<1900||l>2100||i<1||i>12||o<1||o>31)return null;f=e+"-"+n.padStart(2,"0")+"-"+r.padStart(2,"0")}if(!f)return null;var c="";let d;if(u.length>1){c=u.slice(1).join(" ");const t=/#[0-9a-fA-F]{6,8}/;let e=t.exec(c)
+;e&&e.length?(d=e[0],c=c.replace(t,"")):d=i&&i.color||"#40c463"}return d=d||i&&i.color||"#40c463",{date:f,title:c,color:d}}function i(t,e){if(!e)return;let n=e.date.substring(0,4),r=e.date.substring(5,7),l=t.allYear[n];t.allYear[n]=l?l+1:1;let i=t[n]
+;i||(i={},t[n]=i);let a=i[r];a||(a=[],i[r]=a),a.push(e)}function a(e,n){let r={},a={allYear:r},o=0,u=new Date,s=`${u.getFullYear()-1}-${(u.getMonth()+1).toString().padStart(2,"0")}-${u.getDate().toString().padStart(2,"0")}`,f=null
+;if(e.split("\n").forEach((function(t,e){if(0==e)return;let n=l(t,a,f);n&&Array.isArray(n)?n.forEach((t=>{i(a,t),t&&(f=t.date.substring(0,4),t.date>=s&&o++)})):(i(a,n),n&&(f=n.date.substring(0,4),n.date>=s&&o++))})),a.title){
+let t=document.createElement("div");t.className="custom-map-title",t.innerText=a.title||"",n.parentNode.insertBefore(t,n)}let c=Object.keys(r).sort().reverse(),d=a.recent,g=!0;g=d?"1"==d:o&&c.length>1,
+g&&create_heatmap_lv("lmpRecent365"+t++,"",a,"Last 1Y",o,n);for(let e=0;e<c.length;e++){let r=c[e];create_heatmap_lv("lmp"+r+t++,r,a,void 0,void 0,n)}n.style.display="none"}async function o(){let t=document.querySelectorAll("pre > code")
+;if(t&&0!=t.length&&t.length>0)for(let n=0;n<t.length;n++){const r=t[n];var e=r.textContent;if(!e.startsWith("#mapdata"))return;a(e,r.parentNode.parentNode.parentNode)}}o(),window._after_dec_fun=function(){
+let t=document.getElementById("loveiContainer");if(!t){let e=document.getElementById("decryptContent");if(!e)return;t=document.createElement("div"),t.id="loveiContainer",e.insertBefore(t,e.firstChild)}o()},window._after_enc_fun=function(){
+document.getElementById("loveiContainer").innerHTML=""}}();
+</script>
+<footer class="footer">
+      <p> Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/vitock/jekyll-zeta">Jekyll-zeta</a>
+     </p>
+    </footer></div>
+</section></main></body>
+</html>
