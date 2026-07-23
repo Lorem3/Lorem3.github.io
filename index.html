@@ -27,7 +27,7 @@
     <script>
         var arr = new Uint32Array(2)
         crypto.getRandomValues(arr)
-        document.querySelector('.six').textContent = (arr[1] + 1 % 6);
+        document.querySelector('.six').textContent = (arr[1] % 6) + 1;
      </script>
 </body>
 </html>
